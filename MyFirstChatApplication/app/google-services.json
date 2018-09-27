@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "584427990649",
+    "firebase_url": "https://myfirstchatapplication-bfaa4.firebaseio.com",
+    "project_id": "myfirstchatapplication-bfaa4",
+    "storage_bucket": "myfirstchatapplication-bfaa4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:584427990649:android:929288c86ff6752f",
+        "android_client_info": {
+          "package_name": "com.chat.android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "584427990649-drofd4iuo2n5j5fef13hmmp930p4rq40.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBuxQWROIaG9Ahf0WHArJcTe782B6hQWBs"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
