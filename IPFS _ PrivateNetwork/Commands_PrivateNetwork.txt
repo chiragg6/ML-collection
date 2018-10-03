@@ -1,0 +1,1012 @@
+
+root@10992476f5b1:/# ipfs
+bash: ipfs: command not found
+root@10992476f5b1:/# wget https://dist.ipfs.io/go-ipfs/v0.4.17/go-ipfs_v0.4.17_linux-amd64.tar.gz
+--2018-10-03 02:26:38--  https://dist.ipfs.io/go-ipfs/v0.4.17/go-ipfs_v0.4.17_linux-amd64.tar.gz
+Resolving dist.ipfs.io (dist.ipfs.io)... 209.94.78.78, 2602:fea2:1:81::, 2602:fea2:1:79::, ...
+Connecting to dist.ipfs.io (dist.ipfs.io)|209.94.78.78|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 10726868 (10M) [application/gzip]
+Saving to: 'go-ipfs_v0.4.17_linux-amd64.tar.gz'
+
+go-ipfs_v0.4.17_linu 100%[=====================>]  10.23M   644KB/s    in 16s
+
+2018-10-03 02:26:55 (645 KB/s) - 'go-ipfs_v0.4.17_linux-amd64.tar.gz' saved [10726868/10726868]
+
+root@10992476f5b1:/# tar xvfz go-ipfs.tar.gz
+tar (child): go-ipfs.tar.gz: Cannot open: No such file or directory
+tar (child): Error is not recoverable: exiting now
+tar: Child returned status 2
+tar: Error is not recoverable: exiting now
+root@10992476f5b1:/# ls
+bin   etc                                 home   media  proc  sbin  tmp
+boot  go-ipfs_v0.4.17_linux-amd64.tar.gz  lib    mnt    root  srv   usr
+dev   go1.11.1.linux-amd64.tar.gz         lib64  opt    run   sys   var
+root@10992476f5b1:/# tar xvfz go-ipfs_v0.4.17_linux-amd64.tar.gz
+go-ipfs/build-log
+go-ipfs/install.sh
+go-ipfs/ipfs
+go-ipfs/LICENSE
+go-ipfs/README.md
+root@10992476f5b1:/# ./install/sh
+bash: ./install/sh: No such file or directory
+root@10992476f5b1:/# ./install.sh
+bash: ./install.sh: No such file or directory
+root@10992476f5b1:/# cd go-ipfs
+root@10992476f5b1:/go-ipfs# ./install.sh
+Moved ./ipfs to /usr/local/bin
+root@10992476f5b1:/go-ipfs# ipfs
+USAGE
+  ipfs - Global p2p merkle-dag filesystem.
+
+  ipfs [--config=<config> | -c] [--debug=<debug> | -D] [--help=<help>] [-h=<h>] [--local=<local> | -L] [--api=<api>] <command> ...
+
+SUBCOMMANDS
+  BASIC COMMANDS
+    init          Initialize ipfs local configuration
+    add <path>    Add a file to IPFS
+    cat <ref>     Show IPFS object data
+    get <ref>     Download IPFS objects
+    ls <ref>      List links from an object
+    refs <ref>    List hashes of links from an object
+
+  DATA STRUCTURE COMMANDS
+    block         Interact with raw blocks in the datastore
+    object        Interact with raw dag nodes
+    files         Interact with objects as if they were a unix filesystem
+    dag           Interact with IPLD documents (experimental)
+
+  ADVANCED COMMANDS
+    daemon        Start a long-running daemon process
+    mount         Mount an IPFS read-only mountpoint
+    resolve       Resolve any type of name
+    name          Publish and resolve IPNS names
+    key           Create and list IPNS name keypairs
+    dns           Resolve DNS links
+    pin           Pin objects to local storage
+    repo          Manipulate the IPFS repository
+    stats         Various operational stats
+    p2p           Libp2p stream mounting
+    filestore     Manage the filestore (experimental)
+
+  NETWORK COMMANDS
+    id            Show info about IPFS peers
+    bootstrap     Add or remove bootstrap peers
+    swarm         Manage connections to the p2p network
+    dht           Query the DHT for values or peers
+    ping          Measure the latency of a connection
+    diag          Print diagnostics
+
+  TOOL COMMANDS
+    config        Manage configuration
+    version       Show ipfs version information
+    update        Download and apply go-ipfs updates
+    commands      List all available commands
+
+  Use 'ipfs <command> --help' to learn more about each command.
+
+  ipfs uses a repository in the local file system. By default, the repo is
+  located at ~/.ipfs. To change the repo location, set the $IPFS_PATH
+  environment variable:
+
+    export IPFS_PATH=/path/to/ipfsrepo
+
+  EXIT STATUS
+
+  The CLI will exit with one of the following values:
+
+  0     Successful execution.
+  1     Failed executions.
+
+root@10992476f5b1:/go-ipfs# ipfs help
+USAGE
+  ipfs - Global p2p merkle-dag filesystem.
+
+  ipfs [--config=<config> | -c] [--debug=<debug> | -D] [--help=<help>] [-h=<h>] [--local=<local> | -L] [--api=<api>] <command> ...
+
+SUBCOMMANDS
+  BASIC COMMANDS
+    init          Initialize ipfs local configuration
+    add <path>    Add a file to IPFS
+    cat <ref>     Show IPFS object data
+    get <ref>     Download IPFS objects
+    ls <ref>      List links from an object
+    refs <ref>    List hashes of links from an object
+
+  DATA STRUCTURE COMMANDS
+    block         Interact with raw blocks in the datastore
+    object        Interact with raw dag nodes
+    files         Interact with objects as if they were a unix filesystem
+    dag           Interact with IPLD documents (experimental)
+
+  ADVANCED COMMANDS
+    daemon        Start a long-running daemon process
+    mount         Mount an IPFS read-only mountpoint
+    resolve       Resolve any type of name
+    name          Publish and resolve IPNS names
+    key           Create and list IPNS name keypairs
+    dns           Resolve DNS links
+    pin           Pin objects to local storage
+    repo          Manipulate the IPFS repository
+    stats         Various operational stats
+    p2p           Libp2p stream mounting
+    filestore     Manage the filestore (experimental)
+
+  NETWORK COMMANDS
+    id            Show info about IPFS peers
+    bootstrap     Add or remove bootstrap peers
+    swarm         Manage connections to the p2p network
+    dht           Query the DHT for values or peers
+    ping          Measure the latency of a connection
+    diag          Print diagnostics
+
+  TOOL COMMANDS
+    config        Manage configuration
+    version       Show ipfs version information
+    update        Download and apply go-ipfs updates
+    commands      List all available commands
+
+  Use 'ipfs <command> --help' to learn more about each command.
+root@10992476f5b1:/go-ipfs# ipfs version
+ipfs version 0.4.17
+root@10992476f5b1:/go-ipfs# ipfs init
+initializing IPFS node at /root/.ipfs
+generating 2048-bit RSA keypair...done
+peer identity: QmTuCLvr5wxrWHJa5Lgkvnw3ifRjMtLL8RnH47V5VAs2Xk
+to get started, enter:
+
+        ipfs cat /ipfs/QmS4ustL54uo8FzR9455qaxZwuMiUhyvMcX9Ba8nUH4uVv/readme
+
+root@10992476f5b1:/go-ipfs# nano /usr/lib/systemd/system/ipfsd.service
+bash: nano: command not found
+root@10992476f5b1:/go-ipfs# apt install nano
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+Suggested packages:
+  spell
+The following NEW packages will be installed:
+  nano
+0 upgraded, 1 newly installed, 0 to remove and 4 not upgraded.
+Need to get 231 kB of archives.
+After this operation, 778 kB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu bionic/main amd64 nano amd64 2.9.3-2 [231 kB]
+Fetched 231 kB in 1s (181 kB/s)
+debconf: delaying package configuration, since apt-utils is not installed
+Selecting previously unselected package nano.
+(Reading database ... 7848 files and directories currently installed.)
+Preparing to unpack .../nano_2.9.3-2_amd64.deb ...
+Unpacking nano (2.9.3-2) ...
+Setting up nano (2.9.3-2) ...
+update-alternatives: using /bin/nano to provide /usr/bin/editor (editor) in auto mode
+update-alternatives: warning: skip creation of /usr/share/man/man1/editor.1.gz because associated file /usr/share/man/man1/nano.1.gz (of link group editor) doesn't exist
+update-alternatives: using /bin/nano to provide /usr/bin/pico (pico) in auto mode
+update-alternatives: warning: skip creation of /usr/share/man/man1/pico.1.gz because associated file /usr/share/man/man1/nano.1.gz (of link group pico) doesn't exist
+root@10992476f5b1:/go-ipfs# nano /usr/lib/systemd/system/ipfsd.service
+root@10992476f5b1:/go-ipfs# nano /usr/lib/systemd/system/ipfsd.service
+root@10992476f5b1:/go-ipfs# cd
+root@10992476f5b1:~# ls
+go
+root@10992476f5b1:~# ipfs
+USAGE
+  ipfs - Global p2p merkle-dag filesystem.
+
+  ipfs [--config=<config> | -c] [--debug=<debug> | -D] [--help=<help>] [-h=<h>] [--local=<local> | -L] [--api=<api>] <command> ...
+
+SUBCOMMANDS
+  BASIC COMMANDS
+    init          Initialize ipfs local configuration
+    add <path>    Add a file to IPFS
+    cat <ref>     Show IPFS object data
+    get <ref>     Download IPFS objects
+    ls <ref>      List links from an object
+    refs <ref>    List hashes of links from an object
+
+  DATA STRUCTURE COMMANDS
+    block         Interact with raw blocks in the datastore
+    object        Interact with raw dag nodes
+    files         Interact with objects as if they were a unix filesystem
+    dag           Interact with IPLD documents (experimental)
+
+  ADVANCED COMMANDS
+    daemon        Start a long-running daemon process
+    mount         Mount an IPFS read-only mountpoint
+    resolve       Resolve any type of name
+    name          Publish and resolve IPNS names
+    key           Create and list IPNS name keypairs
+    dns           Resolve DNS links
+    pin           Pin objects to local storage
+    repo          Manipulate the IPFS repository
+    stats         Various operational stats
+    p2p           Libp2p stream mounting
+    filestore     Manage the filestore (experimental)
+
+  NETWORK COMMANDS
+    id            Show info about IPFS peers
+    bootstrap     Add or remove bootstrap peers
+    swarm         Manage connections to the p2p network
+    dht           Query the DHT for values or peers
+    ping          Measure the latency of a connection
+    diag          Print diagnostics
+
+  TOOL COMMANDS
+    config        Manage configuration
+    version       Show ipfs version information
+    update        Download and apply go-ipfs updates
+    commands      List all available commands
+
+  Use 'ipfs <command> --help' to learn more about each command.
+
+  ipfs uses a repository in the local file system. By default, the repo is
+  located at ~/.ipfs. To change the repo location, set the $IPFS_PATH
+  environment variable:
+
+    export IPFS_PATH=/path/to/ipfsrepo
+
+  EXIT STATUS
+
+  The CLI will exit with one of the following values:
+
+  0     Successful execution.
+  1     Failed executions.
+
+root@10992476f5b1:~# whereis ipfs
+ipfs: /usr/local/bin/ipfs
+root@10992476f5b1:~# cd usr
+bash: cd: usr: No such file or directory
+root@10992476f5b1:~# cd /
+root@10992476f5b1:/# cd usr/lib
+root@10992476f5b1:/usr/lib# ls
+apt   gcc       locale  openssh     sasl2  sudo     tar         x86_64-linux-gnu
+dpkg  git-core  mime    os-release  ssl    systemd  tmpfiles.d
+root@10992476f5b1:/usr/lib# cd systemd
+root@10992476f5b1:/usr/lib/systemd# ls
+user
+root@10992476f5b1:/usr/lib/systemd# cd /
+root@10992476f5b1:/# which ipfs
+/usr/local/bin/ipfs
+root@10992476f5b1:/# systemctl restart ipfsd
+bash: systemctl: command not found
+root@10992476f5b1:/# apt get systemctl
+E: Invalid operation get
+root@10992476f5b1:/# apt install systemctl
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+E: Unable to locate package systemctl
+root@10992476f5b1:/# apt install systemd
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+The following additional packages will be installed:
+  dbus dmsetup file gir1.2-glib-2.0 libapparmor1 libargon2-0 libcap2
+  libcryptsetup12 libdbus-1-3 libdevmapper1.02.1 libgirepository-1.0-1
+  libglib2.0-0 libglib2.0-data libicu60 libidn11 libip4tc0 libjson-c3 libkmod2
+  libmagic-mgc libmagic1 libmpdec2 libnss-systemd libpam-systemd
+  libpython3-stdlib libpython3.6-minimal libpython3.6-stdlib libreadline7 libxml2
+  mime-support networkd-dispatcher python3 python3-dbus python3-gi
+  python3-minimal python3.6 python3.6-minimal readline-common shared-mime-info
+  systemd-sysv xdg-user-dirs xz-utils
+Suggested packages:
+  default-dbus-session-bus | dbus-session-bus iw | wireless-tools python3-doc
+  python3-tk python3-venv python-dbus-doc python3-dbus-dbg python3.6-venv
+  python3.6-doc binutils binfmt-support readline-doc systemd-container
+  policykit-1
+The following NEW packages will be installed:
+  dbus dmsetup file gir1.2-glib-2.0 libapparmor1 libargon2-0 libcap2
+  libcryptsetup12 libdbus-1-3 libdevmapper1.02.1 libgirepository-1.0-1
+  libglib2.0-0 libglib2.0-data libicu60 libidn11 libip4tc0 libjson-c3 libkmod2
+  libmagic-mgc libmagic1 libmpdec2 libnss-systemd libpam-systemd
+  libpython3-stdlib libpython3.6-minimal libpython3.6-stdlib libreadline7 libxml2
+  mime-support networkd-dispatcher python3 python3-dbus python3-gi
+  python3-minimal python3.6 python3.6-minimal readline-common shared-mime-info
+  systemd systemd-sysv xdg-user-dirs xz-utils
+0 upgraded, 42 newly installed, 0 to remove and 4 not upgraded.
+Need to get 19.5 MB of archives.
+After this operation, 87.7 MB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libpython3.6-minimal amd64 3.6.6-1~18.04 [532 kB]
+Get:2 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 python3.6-minimal amd64 3.6.6-1~18.04 [1617 kB]
+Get:3 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 python3-minimal amd64 3.6.5-3ubuntu1 [23.7 kB]
+Get:4 http://archive.ubuntu.com/ubuntu bionic/main amd64 mime-support all 3.60ubuntu1 [30.1 kB]
+Get:5 http://archive.ubuntu.com/ubuntu bionic/main amd64 libmpdec2 amd64 2.4.2-1ubuntu1 [84.1 kB]
+Get:6 http://archive.ubuntu.com/ubuntu bionic/main amd64 readline-common all 7.0-3 [52.9 kB]
+Get:7 http://archive.ubuntu.com/ubuntu bionic/main amd64 libreadline7 amd64 7.0-3 [124 kB]
+Get:8 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libpython3.6-stdlib amd64 3.6.6-1~18.04 [1713 kB]
+Get:9 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 python3.6 amd64 3.6.6-1~18.04 [190 kB]
+Get:10 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libpython3-stdlib amd64 3.6.5-3ubuntu1 [7204 B]
+Get:11 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 python3 amd64 3.6.5-3ubuntu1 [10.2 kB]
+Get:12 http://archive.ubuntu.com/ubuntu bionic/main amd64 libcap2 amd64 1:2.25-1.2 [13.0 kB]
+Get:13 http://archive.ubuntu.com/ubuntu bionic/main amd64 libargon2-0 amd64 0~20161029-1.1 [19.9 kB]
+Get:14 http://archive.ubuntu.com/ubuntu bionic/main amd64 libdevmapper1.02.1 amd64 2:1.02.145-4.1ubuntu3 [127 kB]
+Get:15 http://archive.ubuntu.com/ubuntu bionic/main amd64 libjson-c3 amd64 0.12.1-1.3 [21.4 kB]
+Get:16 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libcryptsetup12 amd64 2:2.0.2-1ubuntu1.1 [134 kB]
+Get:17 http://archive.ubuntu.com/ubuntu bionic/main amd64 libidn11 amd64 1.33-2.1ubuntu1 [45.7 kB]
+Get:18 http://archive.ubuntu.com/ubuntu bionic/main amd64 libip4tc0 amd64 1.6.1-2ubuntu2 [19.6 kB]
+Get:19 http://archive.ubuntu.com/ubuntu bionic/main amd64 libapparmor1 amd64 2.12-4ubuntu5 [31.5 kB]
+Get:20 http://archive.ubuntu.com/ubuntu bionic/main amd64 libkmod2 amd64 24-1ubuntu3 [40.1 kB]
+Get:21 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 systemd amd64 237-3ubuntu10.3 [2896 kB]
+Get:22 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 systemd-sysv amd64 237-3ubuntu10.3 [11.7 kB]
+Get:23 http://archive.ubuntu.com/ubuntu bionic/main amd64 libdbus-1-3 amd64 1.12.2-ist
+update-alternatives: warning: skip creation of /usr/share/man/man1/lzcmp.1.gz because associated file /usr/share/man/man1/xzcmp.1.gz (of link group lzma) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/man1/lzgrep.1.gz because associated file /usr/share/man/man1/xzgrep.1.gz (of link group lzma) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/man1/lzegrep.1.gz because associated file /usr/share/man/man1/xzegrep.1.gz (of link group lzma) doesn't
+exist
+update-alternatives: warning: skip creation of /usr/share/man/man1/lzfgrep.1.gz because associated file /usr/share/man/man1/xzfgrep.1.gz (of link group lzma) doesn't
+exist
+Processing triggers for systemd (237-3ubuntu10.3) ...
+Setting up dmsetup (2:1.02.145-4.1ubuntu3) ...
+Setting up shared-mime-info (1.9-2) ...
+
+Setting up xdg-user-dirs (0.17-1ubuntu1) ...
+Setting up libmpdec2:amd64 (2.4.2-1ubuntu1) ...
+Setting up libdbus-1-3:amd64 (1.12.2-1ubuntu1) ...
+Setting up libpython3.6-stdlib:amd64 (3.6.6-1~18.04) ...
+Setting up python3.6 (3.6.6-1~18.04) ...
+Setting up file (1:5.32-2ubuntu0.1) ...
+Setting up dbus (1.12.2-1ubuntu1) ...
+Setting up libpython3-stdlib:amd64 (3.6.5-3ubuntu1) ...
+Setting up libpam-systemd:amd64 (237-3ubuntu10.3) ...
+debconf: unable to initialize frontend: Dialog
+debconf: (No usable dialog-like program is installed, so the dialog based frontend
+cannot be used. at /usr/share/perl5/Debconf/FrontEnd/Dialog.pm line 76.)
+debconf: falling back to frontend: Readline
+Setting up python3 (3.6.5-3ubuntu1) ...
+running python rtupdate hooks for python3.6...
+running python post-rtupdate hooks for python3.6...
+Setting up python3-gi (3.26.1-2) ...
+Setting up python3-dbus (1.2.6-1) ...
+Setting up networkd-dispatcher (1.7-0ubuntu3.2) ...
+Created symlink /etc/systemd/system/multi-user.target.wants/networkd-dispatcher.service → /lib/systemd/system/networkd-dispatcher.service.
+Processing triggers for libc-bin (2.27-3ubuntu1) ...
+Processing triggers for systemd (237-3ubuntu10.3) ...
+root@10992476f5b1:/# systemctl restart ipfsd
+System has not been booted with systemd as init system (PID 1). Can't operate.
+root@10992476f5b1:/# systemctl status ipfsd
+System has not been booted with systemd as init system (PID 1). Can't operate.
+root@10992476f5b1:/# ipfs init
+initializing IPFS node at /root/.ipfs
+Error: ipfs configuration file already exists!
+Reinitializing would overwrite your keys.
+
+root@10992476f5b1:/# service ipfs start
+ipfs: unrecognized service
+root@10992476f5b1:/# ipfs
+USAGE
+  ipfs - Global p2p merkle-dag filesystem.
+
+  ipfs [--config=<config> | -c] [--debug=<debug> | -D] [--help=<help>] [-h=<h>] [--local=<local> | -L] [--api=<api>] <command> ...
+
+SUBCOMMANDS
+  BASIC COMMANDS
+    init          Initialize ipfs local configuration
+    add <path>    Add a file to IPFS
+    cat <ref>     Show IPFS object data
+    get <ref>     Download IPFS objects
+    ls <ref>      List links from an object
+    refs <ref>    List hashes of links from an object
+
+  DATA STRUCTURE COMMANDS
+    block         Interact with raw blocks in the datastore
+    object        Interact with raw dag nodes
+    files         Interact with objects as if they were a unix filesystem
+    dag           Interact with IPLD documents (experimental)
+
+  ADVANCED COMMANDS
+    daemon        Start a long-running daemon process
+    mount         Mount an IPFS read-only mountpoint
+    resolve       Resolve any type of name
+    name          Publish and resolve IPNS names
+    key           Create and list IPNS name keypairs
+    dns           Resolve DNS links
+    pin           Pin objects to local storage
+    repo          Manipulate the IPFS repository
+    stats         Various operational stats
+    p2p           Libp2p stream mounting
+    filestore     Manage the filestore (experimental)
+
+  NETWORK COMMANDS
+    id            Show info about IPFS peers
+    bootstrap     Add or remove bootstrap peers
+    swarm         Manage connections to the p2p network
+    dht           Query the DHT for values or peers
+    ping          Measure the latency of a connection
+    diag          Print diagnostics
+
+  TOOL COMMANDS
+    config        Manage configuration
+    version       Show ipfs version information
+    update        Download and apply go-ipfs updates
+    commands      List all available commands
+
+  Use 'ipfs <command> --help' to learn more about each command.
+
+  ipfs uses a repository in the local file system. By default, the repo is
+  located at ~/.ipfs. To change the repo location, set the $IPFS_PATH
+  environment variable:
+
+    export IPFS_PATH=/path/to/ipfsrepo
+
+  EXIT STATUS
+
+  The CLI will exit with one of the following values:
+
+  0     Successful execution.
+  1     Failed executions.
+
+root@10992476f5b1:/# service ipfsd start
+ipfsd: unrecognized service
+root@10992476f5b1:/# nano /usr/lib/systemd/system/ipfsd.service
+root@10992476f5b1:/# ipfs daemon
+Initializing daemon...
+Swarm listening on /ip4/127.0.0.1/tcp/4001
+Swarm listening on /ip4/172.17.0.2/tcp/4001
+Swarm listening on /p2p-circuit/ipfs/QmTuCLvr5wxrWHJa5Lgkvnw3ifRjMtLL8RnH47V5VAs2XkSwarm announcing /ip4/127.0.0.1/tcp/4001
+Swarm announcing /ip4/172.17.0.2/tcp/4001
+API server listening on /ip4/127.0.0.1/tcp/5001
+Gateway (readonly) server listening on /ip4/127.0.0.1/tcp/8080
+Daemon is ready
+ ^C
+Received interrupt signal, shutting down...
+(Hit ctrl-c again to force-shutdown the daemon.)
+root@10992476f5b1:/# ipfs daemon status
+Error: Unknown Command "status"
+
+Did you mean this?
+
+        stats
+
+USAGE
+  ipfs daemon - Run a network-connected IPFS node.
+
+  ipfs daemon [--init] [--init-profile=<init-profile>] [--routing=<routing>] [--mount] [--writable] [--mount-ipfs=<mount-ipfs>] [--mount-ipns=<mount-ipns>] [--unrestricted-api] [--disable-transport-encryption] [--enable-gc] [--manage-fdlimit=false] [--offline] [--migrate] [--enable-pubsub-experiment] [--enable-namesys-pubsub] [--e  the daemon.
+
+Use 'ipfs daemon --help' for more information about this command.
+
+root@10992476f5b1:/# cd /root/
+root@10992476f5b1:~# echo "Aicume Blockchain" > info.txt
+root@10992476f5b1:~# mkdir upload
+root@10992476f5b1:~# echo "Aicumen Blockchain" > upload/info.txt
+root@10992476f5b1:~# ls
+go  info.txt  upload
+root@10992476f5b1:~# ipfs add info.txt
+added QmXStLibujMHoocJ7u1whvQBseMD9wTxoLQVXeVS8F1xMD info.txt
+ 18 B / 18 B [============================================================] 100.00%root@10992476f5b1:~# ifconfig
+bash: ifconfig: command not found
+root@10992476f5b1:~# apt install ifconfig
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+E: Unable to locate package ifconfig
+root@10992476f5b1:~# ip a
+bash: ip: command not found
+root@10992476f5b1:~# apt install net-tools
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+The following NEW packages will be installed:
+  net-tools
+0 upgraded, 1 newly installed, 0 to remove and 4 not upgraded.
+Need to get 194 kB of archives.
+After this operation, 803 kB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu bionic/main amd64 net-tools amd64 1.60+git20161116.90da8a0-1ubuntu1 [194 kB]
+Fetched 194 kB in 1s (212 kB/s)
+debconf: delaying package configuration, since apt-utils is not installed
+Selecting previously unselected package net-tools.
+(Reading database ... 9983 files and directories currently installed.)
+Preparing to unpack .../net-tools_1.60+git20161116.90da8a0-1ubuntu1_amd64.deb ...
+Unpacking net-tools (1.60+git20161116.90da8a0-1ubuntu1) ...
+Setting up net-tools (1.60+git20161116.90da8a0-1ubuntu1) ...
+root@10992476f5b1:~# ifconfig
+eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 172.17.0.2  netmask 255.255.0.0  broadcast 172.17.255.255
+        ether 02:42:ac:11:00:02  txqueuelen 0  (Ethernet)
+        RX packets 209190  bytes 234866358 (234.8 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 167298  bytes 14444640 (14.4 MB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        loop  txqueuelen 1  (Local Loopback)
+        RX packets 1407  bytes 87660 (87.6 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 1407  bytes 87660 (87.6 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+root@10992476f5b1:~# ipfs init
+initializing IPFS node at /root/.ipfs
+Error: ipfs configuration file already exists!
+Reinitializing would overwrite your keys.
+
+root@10992476f5b1:~# ipfs bootstrap rm --all
+removed /dnsaddr/bootstrap.libp2p.io/ipfs/QmNnooDu7bfjPFoTZYxMNLWUQJyrVwtbZg5gBMjTezGAJN
+removed /dnsaddr/bootstrap.libp2p.io/ipfs/QmQCU2EcMqAqQPR2i9bChDtGNJchTbq5TbXJJ16u19uLTa
+removed /dnsaddr/bootstrap.libp2p.io/ipfs/QmbLHAnMoJPWSCR5Zhtx6BHJX9KiKNN6tpvbUcqanj75Nb
+removed /dnsaddr/bootstrap.libp2p.io/ipfs/QmcZf59bWwK5XFi76CZX8cbJ4BhTzzA3gU1ZjYZcYW3dwt
+removed /ip4/104.131.131.82/tcp/4001/ipfs/QmaCpDMGvV2BGHeYERUEnRQAwe3N8SzbUtfsmvsqQLuvuJ
+removed /ip4/104.236.179.241/tcp/4001/ipfs/QmSoLPppuBtQSGwKDZT2M73ULpjvfd3aZ6ha4oFGL1KrGM
+removed /ip4/104.236.76.40/tcp/4001/ipfs/QmSoLV4Bbm51jM9C4gDYZQ9Cy3U6aXMJDAbzgu2fzaDs64
+removed /ip4/128.199.219.111/tcp/4001/ipfs/QmSoLSafTMBsPKadTEgaXctDQVcqN88CNLHXMkTNwMKPnu
+removed /ip4/178.62.158.247/tcp/4001/ipfs/QmSoLer265NRgSp2LA3dPaeykiS1J6DifTC88f5uVQKNAd
+removed /ip6/2400:6180:0:d0::151:6001/tcp/4001/ipfs/QmSoLSafTMBsPKadTEgaXctDQVcqN88CNLHXMkTNwMKPnu
+removed /ip6/2604:a880:1:20::203:d001/tcp/4001/ipfs/QmSoLPppuBtQSGwKDZT2M73ULpjvfd3aZ6ha4oFGL1KrGM
+removed /ip6/2604:a880:800:10::4a:5001/tcp/4001/ipfs/QmSoLV4Bbm51jM9C4gDYZQ9Cy3U6aXMJDAbzgu2fzaDs64
+removed /ip6/2a03:b0c0:0:1010::23:1001/tcp/4001/ipfs/QmSoLer265NRgSp2LA3dPaeykiS1J6DifTC88f5uVQKNAd
+root@10992476f5b1:~# ipfs config show
+{
+  "API": {
+    "HTTPHeaders": {
+      "Server": [
+        "go-ipfs/0.4.17"
+      ]
+    }
+  },
+  "Addresses": {
+    "API": "/ip4/127.0.0.1/tcp/5001",
+    "Announce": [],
+    "Gateway": "/ip4/127.0.0.1/tcp/8080",
+    "NoAnnounce": [],
+    "Swarm": [
+      "/ip4/0.0.0.0/tcp/4001",
+      "/ip6/::/tcp/4001"
+    ]
+  },
+  "Bootstrap": null,
+  "Datastore": {
+    "BloomFilterSize": 0,
+    "GCPeriod": "1h",
+    "HashOnRead": false,
+    "Spec": {
+      "mounts": [
+        {
+          "child": {
+            "path": "blocks",
+            "shardFunc": "/repo/flatfs/shard/v1/next-to-last/2",
+            "sync": true,
+            "type": "flatfs"
+          },
+          "mountpoint": "/blocks",
+          "prefix": "flatfs.datastore",
+          "type": "measure"
+        },
+        {
+          "child": {
+            "compression": "none",
+            "path": "datastore",
+            "type": "levelds"
+          },
+          "mountpoint": "/",
+          "prefix": "leveldb.datastore",
+          "type": "measure"
+        }
+      ],
+      "type": "mount"
+    },
+    "StorageGCWatermark": 90,
+    "StorageMax": "10GB"
+  },
+  "Discovery": {
+    "MDNS": {
+      "Enabled": true,
+      "Interval": 10
+    }
+  },
+  "Experimental": {
+    "FilestoreEnabled": false,
+    "Libp2pStreamMounting": false,
+    "ShardingEnabled": false,
+    "UrlstoreEnabled": false
+  },
+  "Gateway": {
+    "HTTPHeaders": {
+      "Access-Control-Allow-Headers": [
+        "X-Requested-With",
+        "Range"
+      ],
+      "Access-Control-Allow-Methods": [
+        "GET"
+      ],
+      "Access-Control-Allow-Origin": [
+        "*"
+      ]
+    },
+    "PathPrefixes": [],
+    "RootRedirect": "",
+    "Writable": false
+  },
+  "Identity": {
+    "PeerID": "QmTuCLvr5wxrWHJa5Lgkvnw3ifRjMtLL8RnH47V5VAs2Xk"
+  },
+  "Ipns": {
+    "RecordLifetime": "",
+    "RepublishPeriod": "",
+    "ResolveCacheSize": 128
+  },
+  "Mounts": {
+    "FuseAllowOther": false,
+    "IPFS": "/ipfs",
+    "IPNS": "/ipns"
+  },
+  "Reprovider": {
+    "Interval": "12h",
+    "Strategy": "all"
+  },
+  "Routing": {
+    "Type": "dht"
+  },
+  "Swarm": {
+    "AddrFilters": null,
+    "ConnMgr": {
+      "GracePeriod": "20s",
+      "HighWater": 900,
+      "LowWater": 600,
+      "Type": "basic"
+    },
+    "DisableBandwidthMetrics": false,
+    "DisableNatPortMap": false,
+    "DisableRelay": false,
+    "EnableRelayHop": false
+  }
+}root@10992476f5b1:~# ipfs config Addresses.Gateway /ip4/0.0.0.0/tcp/8080
+root@10992476f5b1:~# ipfs config Addresses.API /ip4/0.0.0.0/tcp/5001
+root@10992476f5b1:~# ipfs config show
+{
+  "API": {
+    "HTTPHeaders": {
+      "Server": [
+        "go-ipfs/0.4.17"
+      ]
+    }
+  },
+  "Addresses": {
+    "API": "/ip4/0.0.0.0/tcp/5001",
+    "Announce": [],
+    "Gateway": "/ip4/0.0.0.0/tcp/8080",
+    "NoAnnounce": [],
+    "Swarm": [
+      "/ip4/0.0.0.0/tcp/4001",
+      "/ip6/::/tcp/4001"
+    ]
+  },
+  "Bootstrap": null,
+  "Datastore": {
+    "BloomFilterSize": 0,
+    "GCPeriod": "1h",
+    "HashOnRead": false,
+    "Spec": {
+      "mounts": [
+        {
+          "child": {
+            "path": "blocks",
+            "shardFunc": "/repo/flatfs/shard/v1/next-to-last/2",
+            "sync": true,
+            "type": "flatfs"
+          },
+          "mountpoint": "/blocks",
+          "prefix": "flatfs.datastore",
+          "type": "measure"
+        },
+        {
+          "child": {
+            "compression": "none",
+            "path": "datastore",
+            "type": "levelds"
+          },
+          "mountpoint": "/",
+          "prefix": "leveldb.datastore",
+          "type": "measure"
+        }
+      ],
+      "type": "mount"
+    },
+    "StorageGCWatermark": 90,
+    "StorageMax": "10GB"
+  },
+  "Discovery": {
+    "MDNS": {
+      "Enabled": true,
+      "Interval": 10
+    }
+  },
+  "Experimental": {
+    "FilestoreEnabled": false,
+    "Libp2pStreamMounting": false,
+    "ShardingEnabled": false,
+    "UrlstoreEnabled": false
+  },
+  "Gateway": {
+    "HTTPHeaders": {
+      "Access-Control-Allow-Headers": [
+        "X-Requested-With",
+        "Range"
+      ],
+      "Access-Control-Allow-Methods": [
+        "GET"
+      ],
+      "Access-Control-Allow-Origin": [
+        "*"
+      ]
+    },
+    "PathPrefixes": [],
+    "RootRedirect": "",
+    "Writable": false
+  },
+  "Identity": {
+    "PeerID": "QmTuCLvr5wxrWHJa5Lgkvnw3ifRjMtLL8RnH47V5VAs2Xk"
+  },
+  "Ipns": {
+    "RecordLifetime": "",
+    "RepublishPeriod": "",
+    "ResolveCacheSize": 128
+  },
+  "Mounts": {
+    "FuseAllowOther": false,
+    "IPFS": "/ipfs",
+    "IPNS": "/ipns"
+  },
+  "Reprovider": {
+    "Interval": "12h",
+    "Strategy": "all"
+  },
+  "Routing": {
+    "Type": "dht"
+  },
+  "Swarm": {
+    "AddrFilters": null,
+    "ConnMgr": {
+      "GracePeriod": "20s",
+      "HighWater": 900,
+      "LowWater": 600,
+      "Type": "basic"
+    },
+    "DisableBandwidthMetrics": false,
+    "DisableNatPortMap": false,
+    "DisableRelay": false,
+    "EnableRelayHop": false
+  }
+}root@10992476f5b1:~# export LIBP2P_FORCE_PNET=1
+root@10992476f5b1:~# ipfs daemon
+Initializing daemon...
+03:42:43.247 ERROR p2p-config: tried to create a libp2p node with no Private Network Protector but usage of Private Networks is forced by the enviroment config.go:66
+03:42:43.328 ERROR   cmd/ipfs: error from node construction: privnet: private network was not configured but is enforced by the environment daemon.go:332
+Error: privnet: private network was not configured but is enforced by the environment
+Received interrupt signal, shutting down...
+(Hit ctrl-c again to force-shutdown the daemon.)
+root@10992476f5b1:~# ipfs daemon
+Initializing daemon...
+03:42:51.703 ERROR p2p-config: tried to create a libp2p node with no Private Network Protector but usage of Private Networks is forced by the enviroment config.go:66
+03:42:51.794 ERROR   cmd/ipfs: error from node construction: privnet: private network was not configured but is enforced by the environment daemon.go:332
+Error: privnet: private network was not configured but is enforced by the environment
+Received interrupt signal, shutting down...
+(Hit ctrl-c again to force-shutdown the daemon.)
+root@10992476f5b1:~# ipfs daemon shutdown
+Error: Unknown Command "shutdown"
+
+Did you mean this?
+
+        shutdown
+
+USAGE
+  ipfs daemon - Run a network-connected IPFS node.
+
+  ipfs daemon [--init] [--init-profile=<init-profile>] [--routing=<routing>] [--mount] [--writable] [--mount-ipfs=<mount-ipfs>] [--mount-ipns=<mount-ipns>] [--unrestricted-api] [--disable-transport-encryption] [--enable-gc] [--manage-fdlimit=false] [--offline] [--migrate] [--enable-pubsub-experiment] [--enable-namesys-pubsub] [--enable-mplex-experiment=false]
+
+  'ipfs daemon' runs a persistent ipfs daemon that can serve commands
+  over the network. Most applications that use IPFS will do so by
+  communicating with a daemon over the HTTP API. While the daemon is
+  running, calls to 'ipfs' commands will be sent over the network to
+  the daemon.
+
+Use 'ipfs daemon --help' for more information about this command.
+
+root@10992476f5b1:~# go get github.com/Kubuxu/go-ipfs-swarm-key-gen/ipfs-swarm-key-gen
+root@10992476f5b1:~# ipfs-swarm-key-gen > ~/.ipfs/swarm.key
+root@10992476f5b1:~# ls .ipfs*
+blocks  config  datastore  datastore_spec  keystore  swarm.key  version
+root@10992476f5b1:~# nano swarm.key
+root@10992476f5b1:~# nano swarm.key
+root@10992476f5b1:~# nano swarm.key
+root@10992476f5b1:~# cd .ipfs
+root@10992476f5b1:~/.ipfs# cat > swarm.key
+^C
+root@10992476f5b1:~/.ipfs# ipfs-swarm-key-gen > ~/.ipfs/swarm.key                  root@10992476f5b1:~/.ipfs# cat > swarm.key
+^C
+root@10992476f5b1:~/.ipfs# cd /
+root@10992476f5b1:/# ls
+bin   go-ipfs                             lib    opt   sbin  usr
+boot  go-ipfs_v0.4.17_linux-amd64.tar.gz  lib64  proc  srv   var
+dev   go1.11.1.linux-amd64.tar.gz         media  root  sys
+etc   home                                mnt    run   tmp
+root@10992476f5b1:/# mkdir go
+root@10992476f5b1:/# mkdir -p go/src/hello && cd go/src/hello
+root@10992476f5b1:/go/src/hello# touch hello.go
+root@10992476f5b1:/go/src/hello# cat > hello.go
+package main
+
+import "fmt"
+
+func main() {
+    fmt.Printf("hello,world")
+}^C
+root@10992476f5b1:/go/src/hello# cat > hello.go
+^[[A^[[B^C
+root@10992476f5b1:/go/src/hello# nano hello.go
+root@10992476f5b1:/go/src/hello# nano hello.go
+root@10992476f5b1:/go/src/hello# go build
+root@10992476f5b1:/go/src/hello# ./hello
+Hello, worldroot@10992476f5b1:/go/src/hello# cd /
+root@10992476f5b1:/# ipfs-swarm-key-gen > ~/.ipfs/swarm.key
+root@10992476f5b1:/# cd ~/.ipfs
+root@10992476f5b1:~/.ipfs# ls
+blocks  config  datastore  datastore_spec  keystore  swarm.key  version
+root@10992476f5b1:~/.ipfs# nano swarm.key
+root@10992476f5b1:~/.ipfs# cd /
+root@10992476f5b1:/# ipfs id
+{
+        "ID": "QmTuCLvr5wxrWHJa5Lgkvnw3ifRjMtLL8RnH47V5VAs2Xk",
+        "PublicKey": "CAASpgIwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCr99DQAEucD7zTCJ5RJxWhHjxwwXvnHD68ueOXDp4nSpFai1rSHqBYP4POJm5IDyCg0Euwef9NDEFV53vMja+27ytdewW8H0yybjt7GxgLzcVpsRLxQtti8tr16mh2//Kz0cQS/BGBbthN0B/AgWP2vwdf5jD+xb93NveWOgm+Swi8uPRPHln2XpTYGrI45+XtA+XjLSy3JX+V8hrZ3HcISiybNvUBY87razWHbx2GMMJUwkJUtl2M8bg2/TPA9zuvgYlMMOJVLLm5oX5R9oHimEaPrm8VhOz1+R6QglbWwaa304nscyhhBAh3dgnHwdrOt7Gr8CEwCx6O2k4FgbCZAgMBAAE=",
+        "Addresses": null,
+        "AgentVersion": "go-ipfs/0.4.17/",
+        "ProtocolVersion": "ipfs/0.1.0"
+}
+root@10992476f5b1:/# ipfs swarm peers
+Error: this command must be run in online mode. Try running 'ipfs daemon' first
+root@10992476f5b1:/# ipfs daemon
+Initializing daemon...
+Swarm is limited to private network of peers with the swarm key
+Swarm key fingerprint: b9d3114085f0f7c573d379892246ef78
+Swarm listening on /ip4/127.0.0.1/tcp/4001
+Swarm listening on /ip4/172.17.0.2/tcp/4001
+Swarm listening on /p2p-circuit/ipfs/QmTuCLvr5wxrWHJa5Lgkvnw3ifRjMtLL8RnH47V5VAs2XkSwarm announcing /ip4/127.0.0.1/tcp/4001
+Swarm announcing /ip4/172.17.0.2/tcp/4001
+API server listening on /ip4/0.0.0.0/tcp/5001
+Gateway (readonly) server listening on /ip4/0.0.0.0/tcp/8080
+Daemon is ready
+ipfs swarm peer
+^C
+Received interrupt signal, shutting down...
+(Hit ctrl-c again to force-shutdown the daemon.)
+root@10992476f5b1:/# ipfs swarm peers
+Error: this command must be run in online mode. Try running 'ipfs daemon' first
+root@10992476f5b1:/# ipfs daemon
+Initializing daemon...
+Swarm is limited to private network of peers with the swarm key
+Swarm key fingerprint: b9d3114085f0f7c573d379892246ef78
+Swarm listening on /ip4/127.0.0.1/tcp/4001
+Swarm listening on /ip4/172.17.0.2/tcp/4001
+Swarm listening on /p2p-circuit/ipfs/QmTuCLvr5wxrWHJa5Lgkvnw3ifRjMtLL8RnH47V5VAs2XkSwarm announcing /ip4/127.0.0.1/tcp/4001
+Swarm announcing /ip4/172.17.0.2/tcp/4001
+API server listening on /ip4/0.0.0.0/tcp/5001
+Gateway (readonly) server listening on /ip4/0.0.0.0/tcp/8080
+Daemon is ready
+^C
+Received interrupt signal, shutting down...
+(Hit ctrl-c again to force-shutdown the daemon.)
+root@10992476f5b1:/# ipfs cat QmdrFZHmWGcJY8pbVnoRGAQoK7GaUMiuMwAPppyFJQVTGP
+Error: merkledag: not found
+root@10992476f5b1:/# ipfs cat QmdrFZHmWGcJY8pbVnoRGAQoK7GaUMiuMwAPppyFJQVTGP
+Error: merkledag: not found
+root@10992476f5b1:/# ipfs daemon
+Initializing daemon...
+Swarm is limited to private network of peers with the swarm key
+Swarm key fingerprint: b9d3114085f0f7c573d379892246ef78
+Swarm listening on /ip4/127.0.0.1/tcp/4001
+Swarm listening on /ip4/172.17.0.2/tcp/4001
+Swarm listening on /p2p-circuit/ipfs/QmTuCLvr5wxrWHJa5Lgkvnw3ifRjMtLL8RnH47V5VAs2Xk
+Swarm announcing /ip4/127.0.0.1/tcp/4001
+Swarm announcing /ip4/172.17.0.2/tcp/4001
+API server listening on /ip4/0.0.0.0/tcp/5001
+Gateway (readonly) server listening on /ip4/0.0.0.0/tcp/8080
+Daemon is ready
+^C
+Received interrupt signal, shutting down...
+(Hit ctrl-c again to force-shutdown the daemon.)
+root@10992476f5b1:/# ipfs cat QmdrFZHmWGcJY8pbVnoRGAQoK7GaUMiuMwAPppyFJQVTGP
+Error: merkledag: not found
+root@10992476f5b1:/# ipfs swarm peers
+Error: this command must be run in online mode. Try running 'ipfs daemon' first
+root@10992476f5b1:/# ipfs daemon
+Initializing daemon...
+Swarm is limited to private network of peers with the swarm key
+Swarm key fingerprint: b9d3114085f0f7c573d379892246ef78
+Swarm listening on /ip4/127.0.0.1/tcp/4001
+Swarm listening on /ip4/172.17.0.2/tcp/4001
+Swarm listening on /p2p-circuit/ipfs/QmTuCLvr5wxrWHJa5Lgkvnw3ifRjMtLL8RnH47V5VAs2Xk
+Swarm announcing /ip4/127.0.0.1/tcp/4001
+Swarm announcing /ip4/172.17.0.2/tcp/4001
+API server listening on /ip4/0.0.0.0/tcp/5001
+Gateway (readonly) server listening on /ip4/0.0.0.0/tcp/8080
+Daemon is ready
+^C
+Received interrupt signal, shutting down...
+(Hit ctrl-c again to force-shutdown the daemon.)
+root@10992476f5b1:/# ipfs daemon > ipfs.log &
+[1] 4400
+root@10992476f5b1:/# ipfs swarm peers
+root@10992476f5b1:/# ipfs swarm peers
+root@10992476f5b1:/# ipfs swarm peers
+root@10992476f5b1:/# ipfs swarm peers
+root@10992476f5b1:/# ipfs swarm peers
+root@10992476f5b1:/# ipfs swarm peers
+root@10992476f5b1:/# ipfs swarm peers
+root@10992476f5b1:/# ipfs swarm peers
+root@10992476f5b1:/# ipfs swarm peers
+/ip4/172.17.0.4/tcp/4001/ipfs/QmS5Z34tm3fg9Tgwt3ep4Mboo161WBakbeEPfnREJoQwuz
+root@10992476f5b1:/# ipfs swarm peers
+/ip4/172.17.0.4/tcp/4001/ipfs/QmS5Z34tm3fg9Tgwt3ep4Mboo161WBakbeEPfnREJoQwuz
+root@10992476f5b1:/# ipfs swarm peers
+/ip4/172.17.0.4/tcp/4001/ipfs/QmS5Z34tm3fg9Tgwt3ep4Mboo161WBakbeEPfnREJoQwuz
+root@10992476f5b1:/# ipfs swarm peers
+/ip4/172.17.0.4/tcp/4001/ipfs/QmS5Z34tm3fg9Tgwt3ep4Mboo161WBakbeEPfnREJoQwuz
+root@10992476f5b1:/# ipfs swarm peers
+/ip4/172.17.0.4/tcp/4001/ipfs/QmS5Z34tm3fg9Tgwt3ep4Mboo161WBakbeEPfnREJoQwuz
+root@10992476f5b1:/# ipfs swarm peers
+/ip4/172.17.0.4/tcp/4001/ipfs/QmS5Z34tm3fg9Tgwt3ep4Mboo161WBakbeEPfnREJoQwuz
+root@10992476f5b1:/# ipfs swarm peers
+/ip4/172.17.0.4/tcp/4001/ipfs/QmS5Z34tm3fg9Tgwt3ep4Mboo161WBakbeEPfnREJoQwuz
+root@10992476f5b1:/# ipfs swarm peers
+/ip4/172.17.0.4/tcp/4001/ipfs/QmS5Z34tm3fg9Tgwt3ep4Mboo161WBakbeEPfnREJoQwuz
+root@10992476f5b1:/# ipfs swarm peers
+/ip4/172.17.0.4/tcp/4001/ipfs/QmS5Z34tm3fg9Tgwt3ep4Mboo161WBakbeEPfnREJoQwuz
+root@10992476f5b1:/# ipfs id
+{
+        "ID": "QmTuCLvr5wxrWHJa5Lgkvnw3ifRjMtLL8RnH47V5VAs2Xk",
+        "PublicKey": "CAASpgIwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCr99DQAEucD7zTCJ5RJxWhHjxwwXvnHD68ueOXDp4nSpFai1rSHqBYP4POJm5IDyCg0Euwef9NDEFV53vMja+27ytdewW8H0yybjt7GxgLzcVpsRLxQtti8tr16mh2//Kz0cQS/BGBbthN0B/AgWP2vwdf5jD+xb93NveWOgm+Swi8uPRPHln2XpTYGrI45+XtA+XjLSy3JX+V8hrZ3HcISiybNvUBY87razWHbx2GMMJUwkJUtl2M8bg2/TPA9zuvgYlMMOJVLLm5oX5R9oHimEaPrm8VhOz1+R6QglbWwaa304nscyhhBAh3dgnHwdrOt7Gr8CEwCx6O2k4FgbCZAgMBAAE=",
+        "Addresses": [
+                "/ip4/127.0.0.1/tcp/4001/ipfs/QmTuCLvr5wxrWHJa5Lgkvnw3ifRjMtLL8RnH47V5VAs2Xk",
+                "/ip4/172.17.0.2/tcp/4001/ipfs/QmTuCLvr5wxrWHJa5Lgkvnw3ifRjMtLL8RnH47V5VAs2Xk"
+        ],
+        "AgentVersion": "go-ipfs/0.4.17/",
+        "ProtocolVersion": "ipfs/0.1.0"
+}
+root@10992476f5b1:/# ifconfig
+eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 172.17.0.2  netmask 255.255.0.0  broadcast 172.17.255.255
+        ether 02:42:ac:11:00:02  txqueuelen 0  (Ethernet)
+        RX packets 209964  bytes 234959902 (234.9 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 168115  bytes 14536139 (14.5 MB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        loop  txqueuelen 1  (Local Loopback)
+        RX packets 1727  bytes 138077 (138.0 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 1727  bytes 138077 (138.0 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+root@10992476f5b1:/# ipfs swarm peers
+/ip4/172.17.0.4/tcp/4001/ipfs/QmS5Z34tm3fg9Tgwt3ep4Mboo161WBakbeEPfnREJoQwuz
+root@10992476f5b1:/# ipfs swarm peers
+/ip4/172.17.0.4/tcp/4001/ipfs/QmS5Z34tm3fg9Tgwt3ep4Mboo161WBakbeEPfnREJoQwuz
+root@10992476f5b1:/# ipfs swarm peers
+/ip4/172.17.0.4/tcp/4001/ipfs/QmS5Z34tm3fg9Tgwt3ep4Mboo161WBakbeEPfnREJoQwuz
+root@10992476f5b1:/# ipfs swarm peers
+/ip4/172.17.0.4/tcp/4001/ipfs/QmS5Z34tm3fg9Tgwt3ep4Mboo161WBakbeEPfnREJoQwuz
+root@10992476f5b1:/# ipfs swarm peers
+/ip4/172.17.0.4/tcp/4001/ipfs/QmS5Z34tm3fg9Tgwt3ep4Mboo161WBakbeEPfnREJoQwuz
+root@10992476f5b1:/# ipfs swarm peers
+/ip4/172.17.0.4/tcp/4001/ipfs/QmS5Z34tm3fg9Tgwt3ep4Mboo161WBakbeEPfnREJoQwuz
+root@10992476f5b1:/# ipfs swarm peers
+/ip4/172.17.0.4/tcp/4001/ipfs/QmS5Z34tm3fg9Tgwt3ep4Mboo161WBakbeEPfnREJoQwuz
+root@10992476f5b1:/# ipfs swarm peers
+/ip4/172.17.0.4/tcp/4001/ipfs/QmS5Z34tm3fg9Tgwt3ep4Mboo161WBakbeEPfnREJoQwuz
+root@10992476f5b1:/# ipfs swarm peers
+/ip4/172.17.0.4/tcp/4001/ipfs/QmS5Z34tm3fg9Tgwt3ep4Mboo161WBakbeEPfnREJoQwuz
+root@10992476f5b1:/# ipfs swarm peers
+/ip4/172.17.0.4/tcp/4001/ipfs/QmS5Z34tm3fg9Tgwt3ep4Mboo161WBakbeEPfnREJoQwuz
+root@10992476f5b1:/# ipfs swarm peers
+/ip4/172.17.0.4/tcp/4001/ipfs/QmS5Z34tm3fg9Tgwt3ep4Mboo161WBakbeEPfnREJoQwuz
+root@10992476f5b1:/# ipfs swarm peers
+/ip4/172.17.0.4/tcp/4001/ipfs/QmS5Z34tm3fg9Tgwt3ep4Mboo161WBakbeEPfnREJoQwuz
+root@10992476f5b1:/# ipfs swarm peers
+/ip4/172.17.0.4/tcp/4001/ipfs/QmS5Z34tm3fg9Tgwt3ep4Mboo161WBakbeEPfnREJoQwuz
+root@10992476f5b1:/# ipfs swarm peers
+/ip4/172.17.0.4/tcp/4001/ipfs/QmS5Z34tm3fg9Tgwt3ep4Mboo161WBakbeEPfnREJoQwuz
+root@10992476f5b1:/# ipfs cat QmWkaNU2JZUxaTNoQvH6uc9avbGQ3otDwXE19PtsZHQDUe
+Welcome to Blockchain, Aicumen
+root@10992476f5b1:/# ipfs swarm peers
+/ip4/172.17.0.4/tcp/4001/ipfs/QmS5Z34tm3fg9Tgwt3ep4Mboo161WBakbeEPfnREJoQwuz
+root@10992476f5b1:/#
