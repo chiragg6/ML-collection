@@ -1,0 +1,13 @@
+function myFunction(){
+  const Http = new XMLHttpRequest();
+  const url = 'http://localhost:5000/api/';
+  Http.open("GET", url);
+  Http.send();
+
+Http.onreadystatechange=(e)=>{
+  console.log(Http.responseText)
+  console.log(Http.status);
+    console.log(Http.statusText);
+    console.log(Http);
+    console.log(Http.response);
+}

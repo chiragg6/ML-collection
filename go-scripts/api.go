@@ -1,59 +1,80 @@
+
 package main
 
 import "github.com/gin-gonic/gin"
 
-import "crypto/rand"
-import "encoding/hex"
+
 import "fmt"
+
+
+
+import "os/exec"
+
+import "os"
 import "log"
-import "syscall"
-import "fmt"
-import "strings"
+import "io/ioutil"
 
 
 
 var router *gin.Engine
 
 func main() {
-	router = gin.Default()
-	initializeRoutes()
-	router.Run(":5000")
+   
+   router = gin.Default()
+   initializeRoutes()
+   router.Run(":5000")
 }
 
 func initializeRoutes(){
-	router.GET("/api", Os_variables)
-	
+   
+   router.GET("/api/ipfs", IPFS_config)
+   router.GET("/api/swarmKey", Swarm_key)
+   router.GET("/api/swarmPeers", Swarm_peers)
+   
 }
 
-func Os_variables(c *gin.Context) {
-   var uname syscall.Utsname
-   if err := syscall.Uname(&uname); err != nil {
-      fmt.Printf("Uname: %v", err)
+
+
+func IPFS_config(c *gin.Context) {
+   file, err := os.Open("/root/.ipfs/config")
+   if err != nil {
+      log.Fatal(err)
    }
-   fmt.Println(arrayToString(uname.Nodename))
-   fmt.Println(arrayToString(uname.Release))
-   fmt.Println(arrayToString(uname.Sysname))
-   fmt.Println(arrayToString(uname.Version))
-   fmt.Println(arrayToString(uname.Machine))
-   fmt.Println(arrayToString(uname.Domainname))
-}
-
-func arrayToString(x [65]int8) string {
-   var buf [65]byte
-   for i, b := range x {
-      buf[i] = byte(b)
+   data, err := ioutil.ReadAll(file)
+   if err != nil {
+      log.Fatal(err)
    }
-   str := string(buf[:])
-   if i := strings.Index(str, "\x00"); i != -1 {
-      str = str[:i]
+
+
+   fmt.Printf("Data as string: %s\n", data)
+   fmt.Println("Number of bytes read:", len(data))
+}
+
+func Swarm_key(c *gin.Context){
+    file, err := os.Open("/root/.ipfs/swarm.key")
+   if err != nil {
+      log.Fatal(err)
    }
-   return str
+   data, err := ioutil.ReadAll(file)
+   if err != nil {
+      log.Fatal(err)
+   }
+
+
+   fmt.Printf("Data as string: %s\n", data)
+   fmt.Println("Number of bytes read:", len(data))
 }
 
 
+func Swarm_peers(c *gin.Context){
+     out, err := exec.Command("ipfs", "swarm", "peers").Output()
+        if err != nil {
+                fmt.Printf("%s", err)
+        }
 
+        fmt.Println("Command Successfully Executed")
 
+        output := string(out[:])
 
-
+        fmt.Println(output)
 }
-

@@ -1,0 +1,80 @@
+package main
+
+import (
+ 
+
+  "github.com/gin-gonic/contrib/static"
+  "github.com/gin-gonic/gin"
+ "crypto/rand"
+ "encoding/hex"
+ "fmt"
+ "log"
+ "os"
+ "io/ioutil"
+ "net/http"
+)
+
+func main() {
+  // Set the router as the default one shipped with Gin
+  router := gin.Default()
+
+  // Serve frontend static files
+  router.Use(static.Serve("/", static.LocalFile("./views/js/", true)))
+
+  /*Setting route group with name API*/
+  api := router.Group("/api")
+  {
+    api.GET("/", func(c *gin.Context) {
+     var sharedkey string
+    key := make([]byte, 32)
+    _, err := rand.Read(key)
+    if err != nil {
+        log.Fatalln("While trying to read random source:", err)
+    }
+
+    fmt.Println("/key/swarm/psk/1.0.0/")
+    fmt.Println("/base16/")
+    sharedkey = hex.EncodeToString(key)
+    fmt.Print(sharedkey)
+    c.String(200, sharedkey)
+    })
+
+    /*Another GET Route for getting IPFS Node Config Details*/
+    api.GET("/config", func(c *gin.Context){
+        file, err := os.Open("C:/Users/chira/Documents/practice/package.json")
+   if err != nil {
+      log.Fatal(err)
+   }
+   data, err := ioutil.ReadAll(file)
+   if err != nil {
+      log.Fatal(err)
+   }
+   c.JSON(http.StatusOK, gin.H{
+    "code" : http.StatusOK,
+    "message": string(data),
+    })
+   
+    })
+
+    /*Anotehr GET Route for getting Swarm Key from IPFS Admin*/
+    api.GET("/key", func(c *gin.Context){
+      file, err := os.Open("C:/Users/chira/Documents/practice/key.txt")
+   if err != nil {
+      log.Fatal(err)
+   }
+   key, err := ioutil.ReadAll(file)
+   if err != nil {
+      log.Fatal(err)
+   }
+     c.JSON(http.StatusOK, gin.H{
+    "code" : http.StatusOK,
+    "message": string(key),
+    })
+    })
+  }
+
+
+
+  // Start and run the server
+  router.Run(":5000")
+}
